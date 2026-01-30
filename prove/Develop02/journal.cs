@@ -16,7 +16,7 @@ class Journal
         
     }
 
-    public void SavetoFilie(string filename)
+    public void SavetoFile(string filename)
     {
         
     }
