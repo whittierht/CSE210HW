@@ -1,3 +1,5 @@
+
+
 using System;
 
 namespace Develop04
@@ -6,45 +8,65 @@ namespace Develop04
     {
         static void Main(string[] args)
         {
-            Activity activity = null;
-
             string choice = "";
 
-            while (choice != "4")
+            while (choice != "5")
             {
                 Console.Clear();
 
-                Console.WriteLine("Menu Options:");
-                Console.WriteLine("  1. Start breathing activity");
-                Console.WriteLine("  2. Start reflection Activity");
-                Console.WriteLine("  3. Start listing activity");
-                Console.WriteLine("  4. Quit");
-                Console.Write("Select a choice: ");
 
-                choice = Console.ReadLine() ?? "";
+                Console.WriteLine("Menu Options:");
+                Console.WriteLine("1. Start breathing activity");
+                Console.WriteLine("2. Start reflection activity");
+                Console.WriteLine("3. Start listing activity");
+                Console.WriteLine("4. Start gratitude activity");
+                Console.WriteLine("5. Quit");
+
+                Console.WriteLine();
+                Console.Write("Select a choice from the menu: ");
+
+                choice = Console.ReadLine();
+
+
+                Activity activity = null;
+
 
                 if (choice == "1")
                 {
                     activity = new BreathingActivity();
-                    activity.Run();
                 }
                 else if (choice == "2")
                 {
                     activity = new ReflectionActivity();
-                    activity.Run();
                 }
                 else if (choice == "3")
                 {
                     activity = new ListingActivity();
-                    activity.Run();
                 }
                 else if (choice == "4")
                 {
+                    activity = new GratitudeActivity();
+                }
+                else if (choice == "5")
+                {
+                    break;
                 }
                 else
                 {
                     Console.WriteLine();
-                    Console.WriteLine("Not a choice, enter to continue.");
+                    Console.WriteLine("Invalid.");
+                    Console.WriteLine("Press Enter to continue.");
+                    Console.ReadLine();
+                }
+
+
+                if (activity != null)
+                {
+                    Console.WriteLine();
+                    activity.Run();
+
+                    Console.WriteLine();
+                    Console.WriteLine("Press Enter to return to the menu.");
                     Console.ReadLine();
                 }
             }
