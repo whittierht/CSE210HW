@@ -11,7 +11,7 @@ namespace Develop04
         private Random        _random;
 
         public ListingActivity()
-            : base("" ,  "")
+            : base("Listing Activity" ,  "This activity helps you focus on the positive side of things by making a list.")
         {
             
 

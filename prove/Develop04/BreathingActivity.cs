@@ -7,7 +7,7 @@ namespace Develop04
     class BreathingActivity : Activity
     {
         public BreathingActivity()
-            : base("" ,  "")
+            : base("Breathing Activity" ,  "This activity helps you relax and helps you breath in and out to do so.")
         {
 
 
@@ -17,7 +17,14 @@ namespace Develop04
         public override void Run()
         {
             
+            DisplayStartMessage();
 
+            int timeRemaining = GetDuration();
+
+
+
+
+            DisplayEndMessage();
 
         }
     }

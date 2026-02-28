@@ -11,7 +11,7 @@ namespace Develop04
         private Random        _random;
 
         public ReflectionActivity()
-            : base("" ,  "")
+            : base("Reflection Avtivity" ,  "This helps you reflect on times in your life to help you feel inspired.")
         {
             
 
