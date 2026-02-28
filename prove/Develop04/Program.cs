@@ -1,5 +1,3 @@
-
-
 using System;
 
 namespace Develop04
@@ -20,6 +18,7 @@ namespace Develop04
                 Console.WriteLine("2. Start reflection activity");
                 Console.WriteLine("3. Start listing activity");
                 Console.WriteLine("4. Start gratitude activity");
+                //this is my exceeding the core requirements by adding the gratitude activity.
                 Console.WriteLine("5. Quit");
 
                 Console.WriteLine();
