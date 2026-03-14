@@ -6,32 +6,34 @@ public abstract class Goal
     private string _description;
     private int _points;
 
+
+
+
     public Goal(int points, string name, string description)
     {
-
-
+        _points = points;
+        _name = name;
+        _description = description;
     }
 
     public string GetName()
     {
-        return "";
-
-
+        return _name;
     }
 
     public string GetDescription()
     {
-        return "";
+        return _description;
     }
 
     public int GetPoints()
     {
-        return 0;
+        return _points;
     }
 
     public virtual int RecordEvent()
     {
-        return 0;
+        return _points;
     }
 
     public virtual bool IsComplete()
@@ -39,15 +41,17 @@ public abstract class Goal
         return false;
     }
 
+
+
+
     public virtual string GetDetailsString()
     {
-        return "";
-
-        
+        string checkbox = IsComplete() ? "[X]" : "[ ]";
+        return $"{checkbox} {_name} ({_description})";
     }
 
     public virtual string GetStringRepresentation()
     {
-        return "";
+        return $"{_name}|{_description}|{_points}";
     }
 }
