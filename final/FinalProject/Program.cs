@@ -1,9 +1,11 @@
-using System;
+using FitnessTrackerProject.Core;
 
-class Program
+namespace FitnessTrackerProject
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Hello FinalProject World!");
+        static void Main(string[] args)
+        {
+        }
     }
 }
