@@ -9,28 +9,48 @@ namespace FitnessTrackerProject.Data
 
         public WorkoutLog()
         {
-            
+            _workouts = new List<Workout>();
         }
 
         public void AddWorkout(Workout workout)
         {
-        }
-
-        public double GetTotalCaloriesBurned()
-        {
-            return 0;
-
-            
+            _workouts.Add(workout);
         }
 
         public List<Workout> GetWorkoutHistory()
         {
-            return null;
+            return _workouts;
+        }
+
+        public double GetTotalCaloriesBurned()
+        {
+            double total = 0;
+
+            foreach (Workout workout in _workouts)
+            {
+                total += workout.GetCaloriesBurned();
+            }
+
+            return total;
         }
 
         public string GetSummary()
         {
-            return "";
+            string summary = "";
+
+            if (_workouts.Count == 0)
+            {
+                return "No workouts logged yet.";
+            }
+
+            foreach (Workout workout in _workouts)
+            {
+                summary += workout.GetSummary() + "\n";
+            }
+
+            summary += "\nTotal Calories Burned: " + GetTotalCaloriesBurned();
+
+            return summary;
         }
     }
 }

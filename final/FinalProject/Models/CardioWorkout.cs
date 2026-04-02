@@ -8,26 +8,29 @@ namespace FitnessTrackerProject.Models
         public CardioWorkout(string name, string muscleGroup, int minutes, double caloriesPerMinute)
             : base(name, muscleGroup)
         {
-
-            
+            _minutes = minutes;
+            _caloriesPerMinute = caloriesPerMinute;
         }
-
 
         public int GetMinutes()
         {
-            return 0;
+            return _minutes;
+        }
 
-
+        public double GetCaloriesPerMinute()
+        {
+            return _caloriesPerMinute;
         }
 
         public override double GetCaloriesBurned()
         {
-            return 0;
+            return _minutes * _caloriesPerMinute;
         }
 
         public override string GetSummary()
         {
-            return "";
+            return $"{GetName()} ({GetMuscleGroup()}) - Minutes: {_minutes}, Calories Burned: {GetCaloriesBurned()}";
         }
+
     }
 }

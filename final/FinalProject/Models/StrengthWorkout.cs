@@ -8,21 +8,29 @@ namespace FitnessTrackerProject.Models
         public StrengthWorkout(string name, string muscleGroup, int sets, double caloriesPerSet)
             : base(name, muscleGroup)
         {
+            _sets = sets;
+            _caloriesPerSet = caloriesPerSet;
         }
 
         public int GetSets()
         {
-            return 0;
+            return _sets;
+        }
+
+        public double GetCaloriesPerSet()
+        {
+            return _caloriesPerSet;
         }
 
         public override double GetCaloriesBurned()
         {
-            return 0;
+            return _sets * _caloriesPerSet;
         }
+
 
         public override string GetSummary()
         {
-            return "";
+            return $"{GetName()} ({GetMuscleGroup()}) - Sets: {_sets}, Calories Burned: {GetCaloriesBurned()}";
         }
     }
 }

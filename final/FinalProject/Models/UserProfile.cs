@@ -7,28 +7,39 @@ namespace FitnessTrackerProject.Models
         private double _heightInches;
         private double _weightInPounds;
 
+
         public UserProfile(string name, int age, double heightInches, double weightInPounds)
         {
+            _name = name;
+            _age = age;
+            _heightInches = heightInches;
+            _weightInPounds = weightInPounds;
         }
 
         public string GetName()
         {
-            return "";
+            return _name;
         }
 
         public int GetAge()
         {
-            return 0;
+            return _age;
         }
 
         public double GetHeight()
         {
-            return 0;
+            return _heightInches;
         }
 
         public double GetWeight()
         {
-            return 0;
+            return _weightInPounds;
+        }
+
+
+        public string GetSummary()
+        {
+            return $"{_name} - Age: {_age}, Height: {_heightInches} inches, Weight: {_weightInPounds} lbs";
         }
     }
 }

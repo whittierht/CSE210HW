@@ -7,19 +7,18 @@ namespace FitnessTrackerProject.Models
 
         public Workout(string name, string muscleGroup)
         {
-            
-
+            _name = name;
+            _muscleGroup = muscleGroup;
         }
 
         public string GetName()
         {
-            return "";
+            return _name;
         }
 
         public string GetMuscleGroup()
         {
-            return "";
-            
+            return _muscleGroup;
         }
 
         public abstract double GetCaloriesBurned();
