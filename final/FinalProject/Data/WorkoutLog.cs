@@ -25,7 +25,7 @@ namespace FitnessTrackerProject.Data
         public double GetTotalCaloriesBurned()
         {
             double total = 0;
-
+            //this one here adds up all the calories.
             foreach (Workout workout in _workouts)
             {
                 total += workout.GetCaloriesBurned();
@@ -41,11 +41,14 @@ namespace FitnessTrackerProject.Data
             if (_workouts.Count == 0)
             {
                 return "No workouts logged yet.";
-            }
 
+                
+            }
+            
             foreach (Workout workout in _workouts)
             {
                 summary += workout.GetSummary() + "\n";
+
             }
 
             summary += "\nTotal Calories Burned: " + GetTotalCaloriesBurned();
